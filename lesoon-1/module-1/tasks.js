@@ -88,7 +88,7 @@
 // const globalMin = 69
 // const hours = String(Math.floor(globalMin / 60)).padStart(2, 0);
 // console.log(hours);
-// const minutes = String(globalMin % 60).padStart(2, 0) 
+// const minutes = String(globalMin % 60).padStart(2, 0)
 // console.log(minutes);
 // console.log(`${hours}:${minutes}`)
 
@@ -97,8 +97,18 @@
 // числа від max до min за спаданням
 // Додайте усі парні числа від min до max
 
+// const min = 10;
+// const max = 40;
+// let total = 0;
 
+// for (let i = max; i >= min; i -= 1) {
+//     if (i % 2 === 0) {
+//         console.log("Парні:", i);
+//         total += i;
+//     }
+// }
 
+// console.log("Total sum:", total);
 
 //TODO: 8 ===================================
 //Напишіть код, який запитуватиме
@@ -118,6 +128,23 @@
 
 // const loginInput = prompt('Введіть свій логін');
 
+// if (loginInput === "Адмін") {
+//     const password = prompt('Введіть свій пароль');
+//     if (password) {
+//         if (password === "Я головний") {
+//             alert("Добрий день!");
+//         } else {
+//             alert("Невірний пароль!")
+//         }
+//     } else {
+//         alert("скасовано");
+//     }
+// } else if (loginInput !== "Адмін" && loginInput) {
+//     alert("Невірний логін");
+// } else {
+//     alert("скасовано");
+// }
+
 //TODO: 9 ===================================
 // При завантаженні сторінки користувачеві пропонується
 // в prompt ввести число. Введення додається до значення
@@ -129,6 +156,25 @@
 // Робити перевірку,що користувач ввів саме число,
 // а не довільний набір символів, не потрібно.
 
+// let total = 0;
+// let question = null;
+
+// do {
+//     question = prompt("Ведіть число");
+
+//     if (question === null) {
+//         break;
+//     }
+
+//     question = parseFloat(question);
+     
+//     if (!isNaN(question)) {
+//         total += question;
+//     }
+// } while (true)
+
+// alert(`Загальна кількість ведених чисел дорінює ${total}`);
+
 //TODO: 10 ===================================
 // Напишіть цикл, який пропонує ввести
 // число більше 100 через prompt.
@@ -137,6 +183,15 @@
 // Цикл має питати число, поки відвідувач не
 // введе число більше 100, або натисне кнопку
 // скасування в prompt
+
+// let question = prompt('Ведіть число більше 100');
+// let number = null; 
+
+// do {
+//     number = Number.parseFloat(prompt('Ведіть число більше 100'));
+// } while (number < 100);
+
+// alert(number)
 
 //TODO: 11 ===================================
 //Даний рядок, що складається із символів, наприклад, 'abcde'.
