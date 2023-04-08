@@ -57,6 +57,12 @@
 //TODO: 4 ===================================
 // скористаємося циклом while та виведіть у консоль числа від 0 до 50
 
+// let n = 0;
+// while (n <= 50) {
+//     console.log(n);
+//     n += 1;
+// }
+
 //TODO: 5 ===================================
 //Використовуючи конструкцію if...else,
 //напишіть код, який запитуватиме:
@@ -66,6 +72,11 @@
 //інакше відобразити: "Не знаєте? ECMAScript!"
 
 // const question = prompt('Яка «офіційна» назва JavaScript?').toLowerCase();
+// if(question === "ecmascript"){
+// alert('Вірно!')
+// } else {
+//     alert('Не знаєте? ECMAScript!')
+// }
 
 //TODO: 6 ===================================
 // Напишіть програму, яка отримає від користувача
@@ -74,10 +85,20 @@
 //70 === 01:10
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 
+// const globalMin = 69
+// const hours = String(Math.floor(globalMin / 60)).padStart(2, 0);
+// console.log(hours);
+// const minutes = String(globalMin % 60).padStart(2, 0) 
+// console.log(minutes);
+// console.log(`${hours}:${minutes}`)
+
 //TODO: 7 ===================================
 //Напишіть цикл, який виводить у консоль
 // числа від max до min за спаданням
 // Додайте усі парні числа від min до max
+
+
+
 
 //TODO: 8 ===================================
 //Напишіть код, який запитуватиме
