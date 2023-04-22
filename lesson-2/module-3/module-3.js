@@ -131,9 +131,14 @@
 //   title: 'My menu',
 // };
 
-//? Answer
-
-//?
+// const multiplyNumeric = (obj) => {
+//     for(let item in obj){
+//         if(obj.hasOwnProperty(item) && typeof obj[item] === 'number'){
+//             obj[item] *= 2
+//         }
+//     }
+//     return obj
+// }
 
 // console.log(multiplyNumeric(menu));
 
@@ -151,9 +156,27 @@
  * Виклики функції для перевірки працездатності твоєї реалізації.
  */
 
-//? Answer
+// const findBestEmployee = (obj) => {
+//    let bestEmployee = '';
+//     let bestTask = 0;
 
-// //?
+    // for(let [employee, task] of Object.entries(obj)){
+    //     if(task > bestTask){
+    //         bestTask = task;
+    //         bestEmployee = employee;
+    //     }
+    // }
+    // return bestEmployee
+
+    // for(let item of Object.entries(obj)){
+    //    // console.log(item[0])
+    //     if(item[1] > bestTask){
+    //         bestTask = item[1];
+    //         bestEmployee = item[0];
+    //     }
+    // }
+    // return bestEmployee
+//}
 
 // console.log(
 //   findBestEmployee({
