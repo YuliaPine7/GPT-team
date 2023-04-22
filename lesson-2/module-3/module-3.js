@@ -15,8 +15,20 @@
 //   premium: true,
 // };
 
-//? Answer
+// //? Answer
 
+// user.mood = 'happy'
+// user.hobby = 'skydiving'
+
+// user.premium = false
+
+// console.log(Object.keys(user));
+// console.log(Object.values(user));
+// console.log(Object.entries(user));
+
+// for (let key of Object.keys(user)) {
+//     console.log(`${key}: ${user[key]}`);
+// }
 //?
 
 //TODO:=========task-2=================
@@ -30,9 +42,16 @@
 //   carColor: 'black',
 // };
 
-//? Answer
+// // const getBool = (obj, key) => {
+// //     console.log(Object.keys(obj));
+// //     const keys = Object.keys(obj)
+// //     return keys.includes(key)
+// // }
+// //? Answer
 
-//?
+// const getBool = (obj, key) => key in obj
+
+// //?
 
 // console.log(getBool(obj, 'car')); // true
 
@@ -51,9 +70,13 @@
 
 // let sum = 0;
 
-//? Answer
+// // ? Answer
 
-//?
+// for (let salary of Object.values(salaries)) {
+//     sum += salary
+// }
+
+// // ?
 
 // console.log(sum);
 
@@ -64,7 +87,15 @@
 
 //? Answer
 
-//?
+// const updateObject = (obj, ...removeKeys) => {
+//     const newObj = {...obj};
+//     for (let key of removeKeys) {
+//         delete newObj[key]
+//     }
+//     return newObj
+// }
+
+// //?
 
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'a')); // {c: 3}
 
@@ -81,11 +112,13 @@
 //   merried: false,
 // };
 
-// ?Answer
+// // ?Answer
 
-//?
+// const changeObject = (obj) => Object.entries(obj)
 
-// changeObject(user);
+// // ?
+
+// console.log(changeObject(user));
 
 //TODO:============task-6================
 // Створіть функцію multiplyNumeric(obj),
