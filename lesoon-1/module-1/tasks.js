@@ -185,7 +185,7 @@
 // скасування в prompt
 
 // let question = prompt('Ведіть число більше 100');
-// let number = null; 
+// let number = null;
 
 // do {
 //     number = Number.parseFloat(prompt('Ведіть число більше 100'));
@@ -200,10 +200,31 @@
 
 // const str = 'abcde';
 
+// if (str.startsWith("a")) {
+//     alert("Так")
+// } else {
+//     alert ("Ні")
+// }
+
 //TODO: 12 ===================================
 //Якщо число ділитися на 3 повертати
 //fizz якщо ділитися на 5 повертати buzz
 //Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+// const number = 30;
+// for (let i = 1; i <= number; i += 1){
+//     if (i % 3 === 0 && i % 5 === 0) {
+//         console.log("fizzbuzz")
+
+//     } else if (i % 3 === 0) {
+//         console.log("fizz")
+
+//     }     else if (i % 5 === 0) {
+//         console.log("buzz")
+//     } else {
+//         console.log(i)
+//     }
+// }
 
 //TODO: 13 ===================================
 // Напишіть if..else, що відповідає наступному switch:
@@ -225,3 +246,13 @@
 //   default:
 //     alert('We hope that this page looks ok!');
 // }
+
+// const browser = 'Chrome';
+// if (browser === 'Edge') {
+//     alert("You've got the Edge!");
+// } else if (browser === 'Chrome' || browser === 'Firefox'|| browser === 'Safari'|| browser === 'Opera') {
+//     alert('Okay we support these browsers too');
+// } else {
+//     alert('We hope that this page looks ok!');
+// }
+    
