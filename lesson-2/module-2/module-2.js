@@ -121,11 +121,51 @@ const filmoteka = [
 
 //? Напишіть функцію getAllTitlesOfFilms(films), яка повертає масив із усіма назвами фільмів.
 
+// function getAdultFilms(films){
+//   const newArr = [];
+//   for(let film of films){
+//     newArr.push(film.title)
+//   }
+//   return newArr
+// }
+
+// console.log(getAdultFilms(filmoteka))
 //? Напишіть функцію findFilmByName(films, filmTitle), яка шукає фільм за назвою.
+// function findFilmByName(films, filmTitle){
+//   for(let film of films){
+//     if(film.title === filmTitle){
+//       return film
+//     }
+//     return `${filmTitle} does not exist`
+//   }
+// }
+// console.log(findFilmByName(filmoteka,'Lucah'))
 
 //? Напишіть функцію getAdultFilms(films), яка повертає масив усіх дорослих фільмів.
 
+// function getAdultFilms(films){
+//   const newArr = [];
+//   for(let film of films){
+//     if(film.adult){
+//       newArr.push(film)
+//     }
+//   }
+//   return newArr
+// }
+// console.log(getAdultFilms(filmoteka))
+
 //? Напишіть функцію getNotAdultFilms(films), яка повертає масив усіх фільмів без обмеження.
+
+// function getNotAdultFilms(films){
+//   const newArr = [];
+//     for(let film of films){
+//       if(!film.adult){
+//          newArr.push(film)
+//        }
+//     }
+//    return newArr
+// }
+// console.log(getNotAdultFilms(filmoteka))
 
 //TODO:============task-4===============
 // Створіть масив styles з елементами «Джаз» та «Блюз».
@@ -134,29 +174,45 @@ const filmoteka = [
 // Видалить перший елемент масиву і виведіть його в консоль.
 // Вставте «Реп» і «Реггі» на початок масиву.
 
+// const styles = ['Джаз', 'Блюз'];
+// styles.push('Рок-н-рол');
+// styles[1] = 'Класика'
+// styles.splice(1,1,'Класика');
+// console.log(styles.shift());
+// styles.unshift('Реп','Реггі')
+// console.log(styles)
+
 //TODO:============task-5==============
 // Напишіть функцію min(a, b), яка повертає
 // менше з чисел a, b
 // Потрібно додати перевірку, що функція отримує числа
 
-//? Answer
+// function min(a,b){
+//   if(typeof a === 'number' && typeof b === 'number'){
+//     return a > b ? b : a
+//   }
+// return 'We cannot compare non-number objects'
 
-//?
+// }
 
-// const result = min(10, 5);
-// console.log(result); // 5
+//  const result = min(10, 1);
+//  console.log(result); // 5
 
 //TODO:=============task-6=================
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
 // const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
 
-//? Answer
+// function sumAdjacentNumbers(array){
+//   const newArr = [];
+//   for(let i = 0; i < array.length - 1; i+=1){
+//     newArr.push(array[i] + array[i+1])
+//   }
+// return newArr
+// }
 
-//?
-
-// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
-// const result = sumAdjacentNumbers(someArr);
-// console.log(result); // [33, 45, 39, 17, 25, 27, 29]
+//  const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+//  const result = sumAdjacentNumbers(someArr);
+//  console.log(result); // [33, 45, 39, 17, 25, 27, 29]
 
 //TODO:============task-7==============
 //Напишіть функцію logItems(array), яка приймає
