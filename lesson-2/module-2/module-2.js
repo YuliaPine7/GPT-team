@@ -222,12 +222,15 @@ const filmoteka = [
 //Нумерація елементів має починатися з першого.
 //['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп']
 
-// const musicGenres = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
+//  const musicGenres = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
 
-//? Answer
 
-//?
+// const logItems = (array) => {
+//   for(let i = 1; i < array.length; i+=1){
+//   console.log(`${i}: ${array[i]}`) 
+//   }
 
+// }
 // logItems(musicGenres);
 
 //TODO:=============task-8=================
@@ -235,11 +238,18 @@ const filmoteka = [
 // приймає рядок (параметр message) і форматує його,
 // якщо довжина перевищує значення параметрі maxLength.
 
-//? Answer
+const formatMessage = (message, maxLength) => {
+  // if(message.length > maxLength){
+  //    return message.slice(0, maxLength) + "... "
+  // }
+  // else{
+  //   return message
+  // }
+  return message.length > maxLength ? message.slice(0, maxLength) + "... " : message;
 
-//?
+}
 
-// console.log(formatMessage('Curabitur ligula sapien', 16)); //Повертає 'Curabitur ligula...'.
-// console.log(formatMessage('Curabitur ligula sapien', 23)); //Повертає 'Curabitur ligula sapien'.
-// console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15)); //Повертає 'Nunc sed turpis...'.
-// console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'.
+ console.log(formatMessage('Curabitur ligula sapien', 16)); //Повертає 'Curabitur ligula...'.
+console.log(formatMessage('Curabitur ligula sapien', 23)); //Повертає 'Curabitur ligula sapien'.
+console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15)); //Повертає 'Nunc sed turpis...'.
+console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'.
