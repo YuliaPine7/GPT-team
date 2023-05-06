@@ -4,7 +4,7 @@
 // const product = {
 //     price: 5000,
 //     showPrice() {
-//         console.log(price)
+//         console.log(this.price)
 //     },
 // }
 // product.showPrice()
@@ -23,7 +23,7 @@
 //     action()
 // }
 
-// callAction(product.showPrice)
+// callAction(product.showPrice.bind(product))
 
 // Anser:
 
@@ -39,14 +39,31 @@
 
 // Aswer:
 
+// const User = function ({userName,age,numbersOfPost}) {
+//   this.userName = userName;
+//   this.age = age;
+//   this.numbersOfPost = numbersOfPost;
+  
+//   // this.getInfo = function () {
+//   //   console.log(`Користувачеві ${this.userName} ${this.userAge} років і в нього ${this.userNumbersOfPost} публікацій.`)
+//   // }
+// }
+
+// User.prototype.getInfo = function () {
+//     console.log(`Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`)
+// }
+  
 /**
   |============================
   | Розкоментувати ; )
   |============================
-*/
+// */
 // const polly = new User({ userName: 'Polly', age: 30, numbersOfPost: 15 })
 // console.log(polly)
 // polly.getInfo()
+
+// const obj = {}
+// console.log(obj)
 
 //TODO:=========task-4=================
 //Напиши функцію конструктор Storage який створює об'єкти
@@ -60,6 +77,23 @@
 
 // Aswer:
 
+// const Storage = function (itemsArray) {
+//   this.items = itemsArray;
+// }
+
+// Storage.prototype.getItems = function () {
+//   return this.items
+// }
+
+// Storage.prototype.addItems = function (item) {
+//   return this.items.push(item)
+// }
+
+// Storage.prototype.removeItem = function (item) {
+//   this.items = this.items.filter(el => el !== item)
+//   return this.items
+// }
+
 /**
   |============================
   | Розкоментувати ; )
@@ -68,6 +102,8 @@
 // const storage = new Storage(['apple', 'banana', 'mango']);
 
 // console.log(storage);
+// console.log(storage.addItems('kiwi'))
+// console.log(storage.getItems())
 // console.log(storage.removeItem('apple'));
 
 //TODO:=========task-5=================
@@ -180,24 +216,48 @@
 //і який успадковує клас Worker, додаючи метод getHierarchyLevel
 //Реалізувати завдання за допомогою ES5 прототипів та ES6 класів
 
-// const HIERARCHY_LEVEL = {
-//   TOP: 'top',
-//   BOTTOM: 'bottom',
-// };
+const HIERARCHY_LEVEL = {
+  TOP: 'top',
+  BOTTOM: 'bottom',
+};
 
-// const workerObj = {
-//   name: 'Mango',
-//   surname: 'Worker',
-//   age: 30,
-//   position: 'FE developer',
-//   salary: 5000,
-// };
+const workerObj = {
+  name: 'Mango',
+  surname: 'Worker',
+  age: 30,
+  position: 'FE developer',
+  salary: 5000,
+};
 
 /**
   |============================
   | ES5
   |============================
 */
+
+// const Worker = function (obj) {
+//   const { name, surname, age, position, salary } = obj 
+//   this.name = name;
+//   this.surname = surname;
+//   this.age = age;
+//   this.position = position;
+//   this.salary = salary;
+// }
+
+// Worker.prototype.getSalary = function () {
+//   return this.salary
+// }
+
+// const TopLevelWorker = function (obj, hierarchyLevel) {
+//   Worker.call(this, obj)
+//   this.hierarchyLevel = hierarchyLevel;
+// }
+
+// TopLevelWorker.prototype.getHierarchyLevel = function () {
+//   return this.hierarchyLevel
+// } 
+
+// TopLevelWorker.prototype.getSalary = Worker.prototype.getSalary
 
 // Aswer:
 
@@ -219,6 +279,33 @@
 */
 
 // Aswer:
+
+// class WorkerES6 {
+//   constructor(obj) {
+//     const { name, surname, age, position, salary } = obj 
+//   this.name = name;
+//   this.surname = surname;
+//   this.age = age;
+//   this.position = position;
+//   this.salary = salary;
+//   }
+
+//   getSalary() {
+//     return this.salary;
+//   }
+
+// }
+
+// class TopLevelWorkerES6 extends WorkerES6 {
+//   constructor(obj, hierarchyLevel) {
+//     super(obj) 
+//     this.hierarchyLevel = hierarchyLevel;
+//   }
+
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
 
 /**
   |============================
