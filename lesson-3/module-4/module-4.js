@@ -7,6 +7,22 @@
 //Рядок "Привіт <name>"
 //Реалізуй перевірку, що prompt не порожній
 
+
+// function greet(name) {
+//   console.log(`Привіт ${name}`);
+// }
+
+// function letMeSeeYourName(callback) {
+//   const name = prompt(`Вкажіть Ваше ім'я`)
+//   if (!name) {
+//      return console.log('Заповніть поле');
+//   }
+//   callback(name)
+// }
+
+// letMeSeeYourName(greet);
+
+
 //TODO:=================02=============================
 //Напишіть дві функції
 //makeProduct(name, price, callback) - приймає
@@ -17,10 +33,44 @@
 //showProduct(product) - коллбек приймаючий об'єкт
 //продукту і логірующий їх у консоль
 
+
+
+// function makeProduct(name, price, callback) {
+//   const id = Date.now()
+//   const product = {
+//     id,
+//     name,
+//     price,
+//   }
+//   callback(product)
+// }
+
+// function showProduct({id, name, price}) {
+// console.log(`Товар: ${id}. Назва: ${name}. Ціна: ${price} грн`);
+// }
+
+// makeProduct('Штани', 40, showProduct)
+
+
+
 //TODO:=================03=============================
 // Напишіть функцію makeShef(shefName), яка повертає функцію
 // makeDish(dish), що пам'ятає ім'я шефа при її виклику
 // Функція makeDish має логірувати "<shef> is cooking <dish>"
+
+// function makeShef(shefName) {
+//   return function makeDish(dish) {
+//   console.log(`${shefName} is cooking ${dish}`);
+//   }
+// }
+
+// const shef1 = makeShef('Nikita');
+// const shef2 = makeShef('Olya');
+// const shef3 = makeShef('Yulia');
+
+// shef1('fish')
+// shef2('cakes')
+// shef3('borsch')
 
 //TODO:=================04=============================
 //Напишіть функцію each(array, callback), яка
@@ -30,11 +80,36 @@
 //якого будуть результати виклику callback
 //callback функції повинна множити елементи на 2
 
-const array = [3, 5, 6, 34, 8, 83, 12, 34];
+// const array = [3, 5, 6, 34, 8, 83, 12, 34];
+
+// function each(array, callback, multiplier) {
+//   const newArray = []
+//   for (let item of array) {
+//    newArray.push(callback(item, multiplier))
+//   }
+//   return newArray
+// }
+
+// function multy(number, multiplier) {
+//   return number * multiplier
+// }
+
+// console.log(each(array, multy, 4));
+
 
 //TODO:==================05============================
 //Напишіть функцію makeCounter, яка повертає іншу
 //функцію, яка вважає та логує кількість своїх викликів
+
+// function makeCounter() {
+//   let counter = 0
+//   return () => counter += 1
+// }
+
+// const counter = makeCounter()
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
 
 //TODO:==================06============================
 //Напишіть функцію savePassword(password), яка приймає
@@ -42,10 +117,30 @@ const array = [3, 5, 6, 34, 8, 83, 12, 34];
 //рядок і повертає буль true, якщо рядок збігається зі збереженим
 //паролем і false - якщо не збігається
 
+// function savePassword(password) {
+//  return (ourPassword) => password === ourPassword
+// }
+
+// const checkPassword = savePassword('admin')
+// console.log(checkPassword('1234'));
+// console.log(checkPassword('admin'));
+
 //TODO:====================07==========================
 //Напишіть функцію для зберігання знижки. Функція повертає
 //Іншу функцію, яка приймає суму покупки
 //і повертає фінальну суму із збереженою знижкою.
+
+// function saveDiscount(discount) {
+//   return function makeDiscount(value) {
+//     return value - value * (discount / 100)
+//   }
+// }
+
+// const premium = saveDiscount(50)
+// const standart = saveDiscount(10)
+// console.log(premium(1000));
+// console.log(standart(250));
+
 
 //! Методи масивів
 //TODO:=========task-8=================

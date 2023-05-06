@@ -238,18 +238,18 @@ const filmoteka = [
 // приймає рядок (параметр message) і форматує його,
 // якщо довжина перевищує значення параметрі maxLength.
 
-const formatMessage = (message, maxLength) => {
+// const formatMessage = (message, maxLength) => {
   // if(message.length > maxLength){
   //    return message.slice(0, maxLength) + "... "
   // }
   // else{
   //   return message
   // }
-  return message.length > maxLength ? message.slice(0, maxLength) + "... " : message;
+  // return message.length > maxLength ? message.slice(0, maxLength) + "... " : message;
 
-}
+//}
 
- console.log(formatMessage('Curabitur ligula sapien', 16)); //Повертає 'Curabitur ligula...'.
-console.log(formatMessage('Curabitur ligula sapien', 23)); //Повертає 'Curabitur ligula sapien'.
-console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15)); //Повертає 'Nunc sed turpis...'.
-console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'.
+//  console.log(formatMessage('Curabitur ligula sapien', 16)); //Повертає 'Curabitur ligula...'.
+// console.log(formatMessage('Curabitur ligula sapien', 23)); //Повертає 'Curabitur ligula sapien'.
+// console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15)); //Повертає 'Nunc sed turpis...'.
+// console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'.
