@@ -146,7 +146,10 @@
 //TODO:=========task-8=================
 // ? Знайдіть перше непарне число
 
-// const numbers = [2, 1, 6, 8, 9, 10, 12]
+//  const numbers = [2, 1, 6, 8, 9, 10, 12]
+//  const firstOddNumber = numbers.find(element => element % 2 !== 0);
+//  console.log(firstOddNumber);
+//  console.log(numbers);
 
 //TODO:===========task-9===============
 
@@ -240,50 +243,85 @@ const users = [
 //TODO:==========================
 // Отримати масив імен всіх користувачів (поле name).
 
+// const userName = array => array.map(user => user.name);
+// console.log(userName(users));
+
 //TODO:==========================
 // Отримати масив об'єктів користувачів за кольором очей (eyeColor).
 
+// const getUsersByColor = (array, eyeColor) => array.filter(user => user.eyeColor === eyeColor);
+
 // console.log(getUsersByColor(users, 'brown'))
-// console.log(getUsersByColor(users, 'blue')) // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+//console.log(getUsersByColor(users, 'blue')) // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
 //TODO:==========================
 // Отримати масив імен користувачів за статтю (поле gender)
 
-// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+// const getUsersWithGender = (array, gen) => {
+//   return array
+//   .filter(user => user.gender === gen)
+//   .map(element => element.name);
+// }
+
+//  console.log(getUsersWithGender(users, 'female')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 //TODO:==========================
 // Отримати масив тільки неактивних користувачів (поле isActive).
+
+// const getInactiveUsers = array => array.filter(user => user.isActive);
 
 // console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 //TODO:==========================
 // Отримати масив користувачів віком від min до max
 
-// console.log(getUsersWithAge(users, 30, 40));
+// const getUsersWithAge = (array, min, max) => array.filter(user => user.age >= min && user.age <=max);
+//  console.log(getUsersWithAge(users, 30, 40));
 // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
 //TODO:==========================
 // Отримати загальну суму балансу (поле balance) всіх користувачів.
 
-// console.log(calculateTotalBalance(users)); // 20916
+// const calculateTotalBalance = array => array.reduce((accum, element) => (element.balance += accum),0)
+//  console.log(calculateTotalBalance(users)); // 20916
 
 //TODO:==========================
 // Масив імен всіх користувачів, у яких є товарищь із зазначеним ім'ям.
 
-// console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-// console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+// const getUsersWithFriend = (array, friendName) => array.filter(user => user.friends.includes(friendName)).map(user => user.name);
+
+//  console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+//  console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
 
 //TODO:==========================
 // Масив імен (поле name) людей, відсортованих залежно кількості їх друзів (поле friends)
+// const getNamesSortedByFriendsCount = array => {
+//   return [...array].sort((a,b) => a.friends.length - b.friends.length).map(user => user.name);
+// }
 
-// console.log(getNamesSortedByFriendsCount(users));
+//  console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
 //TODO:==========================
 // Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
 // Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
 
-// console.log(getSortedUniqueSkills(users));
+//const getSortedUniqueSkills = array => {
+  // return [...array].reduce((accum, element) => {
+  //   accum.push(element.skills)
+  //   return accum
+  
+  // },[])
+  // .flat()
+  // .filter((skill, index, array) => array.indexOf(skill) === index)
+  // .sort((a,b) => a.localeCompare(b))
+
+//   return [...array]
+//     .flatMap(user => user.skills)
+//     .filter((skill, index, array) => array.indexOf(skill) === index)
+//     .sort((a,b) => a.localeCompare(b))
+//  }
+//   console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
 //TODO:====================task-10==========================
@@ -301,6 +339,13 @@ const users = [
 //     Одеса: new Date('2023-07-15'),
 //     Хмельницький: new Date('2020-04-18'),
 //     Харків: new Date('2023-07-10'),
+// }
+
+// const concertsToArray = object => {
+//   const newArray = Object.keys(object);
+//   return [...newArray]
+//     .filter(city => object[city] > new Date())
+//     .sort((a,b) => object[a] - object[b])
 // }
 
 // console.log(concertsToArray(concerts))
