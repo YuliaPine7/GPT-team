@@ -13,6 +13,121 @@
   |============================
 */
 
+const refs = {
+  bodyEl: document.querySelector('body'),
+  openBtnEl: document.querySelector('.js-modal-open'),
+  closeBtnEl: document.querySelector('.js-modal-close'),
+  backdropEl: document.querySelector('.js-backdrop'),
+
+  // part 2
+
+  formEl: document.querySelector('.js-modal__form'),
+}
+
+// refs.openBtnEl.addEventListener('click', onOpenModalBtnElClick);
+// refs.closeBtnEl.addEventListener('click', closeModalWindow);
+
+
+// function onOpenModalBtnElClick() {
+
+//   refs.backdropEl.classList.add('is-open');
+  
+//   refs.bodyEl.style.overflow = "hidden"; //відміняє скролл
+
+//   window.addEventListener('keydown', onEscClick)
+//   window.addEventListener('click', onBackdropClick)
+// }
+
+// function closeModalWindow() {
+
+//   refs.backdropEl.classList.remove('is-open');
+
+//   refs.bodyEl.style.overflow = "visible";  //додає скролл
+
+//   window.removeEventListener('keydown', onEscClick)
+// }
+
+// function onEscClick(event) {
+//   if (event.code !== "Escape") {
+//     return
+//   };
+//   closeModalWindow()
+// }
+
+// function onBackdropClick(event) {
+//   if (event.target !== refs.backdropEl) {
+//     return
+//   }
+//   closeModalWindow()
+// }
+
+
+
+
+
+// 2 варінт 
+
+refs.openBtnEl.addEventListener('click', onOpenModalBtnElClick);
+
+
+  const instance = basicLightbox.create(`
+<div class="modal">
+          <button type="button" class="close-btn js-modal-close">X</button>
+
+          <form class="login-form js-modal__form">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="enter your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="enter your email" />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="enter your password"
+              />
+            </label>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+`)
+
+
+function onOpenModalBtnElClick() {
+
+  refs.bodyEl.style.overflow = "hidden"; //відміняє скролл
+  instance.show()
+  
+  document.querySelector('.js-modal__form').addEventListener('submit', onSubmit)
+
+  document.querySelector('.js-modal-close').addEventListener('click', closeModalWindow)
+  window.addEventListener('keydown', onEscClick)
+}
+
+function closeModalWindow() {
+
+  refs.bodyEl.style.overflow = "visible";  //додає скролл
+  instance.close()
+
+  window.removeEventListener('keydown', onEscClick)
+}
+
+function onEscClick(event) {
+  if (event.code !== "Escape") {
+    return
+  };
+  closeModalWindow()
+}
+
+
+
+
+
+
 /**
   |============================
   | Робота з формою:
@@ -28,6 +143,64 @@
   |  - Після отправки почисти форму і реалізуй автоматичне закриття модального вікна
   |============================
 */
+
+ 
+// refs.formEl.addEventListener('submit', onSubmit)
+
+// function onSubmit(event) {
+//   event.preventDefault()
+//   const { elements: { email, name, password } } = event.currentTarget
+ 
+//   if (!email.value || !password.value) {
+//     return alert('email or password is empty')
+//   }
+
+//   const userData = {
+//     name: name.value || 'Anonimus',
+//     email: email.value,
+//     password: password.value
+//   }
+
+
+//   console.log(userData);
+//   refs.formEl.reset()
+//   closeModalWindow()
+//   setTimeout(() => {
+//     alert('дякую за реєстрацію')
+//   }, 1000);
+// }
+
+
+
+
+
+//2 варіант
+
+
+
+function onSubmit(event) {
+  event.preventDefault()
+  const { elements: { email, name, password } } = event.currentTarget
+ 
+  if (!email.value || !password.value) {
+    return alert('email or password is empty')
+  }
+
+  const userData = {
+    name: name.value || 'Anonimus',
+    email: email.value,
+    password: password.value
+  }
+
+
+  console.log(userData);
+  event.currentTarget.reset()
+  closeModalWindow()
+  setTimeout(() => {
+    alert('дякую за реєстрацію')
+  }, 1000);
+}
+
 
 //TODO:====================02====================================TODOS============================================================================================
 /**
@@ -49,3 +222,102 @@
   | забувай чистити розмітку перед її вставкою.
   |============================
 */
+
+
+const formToDoEl = document.querySelector('.js-todos__form')
+const listEl = document.querySelector('ul')
+
+formToDoEl.addEventListener('submit', onClickSubmit)
+listEl.addEventListener('click', onBtnDeleteClick)
+
+let items = [] 
+
+function onClickSubmit(event) {
+  event.preventDefault();
+
+  const input = event.currentTarget.elements['user-todos']
+  const todos = input.value.trim()
+  
+  if (!todos) {
+    return alert('заповніть поле')
+  }
+
+  if (todos !== '') {
+    const dublicate = items.find(el => el.text === todos)
+    if (dublicate) {
+      return alert('Dublicate!')
+    }
+  }
+
+  const item = {
+    id: Date.now(),
+    text: todos,
+  }
+
+  items.push(item)
+
+  input.value = ''
+
+  updateList()
+
+}
+
+function updateList() {
+
+    
+  //варіант 1
+  
+//   const markup = items.map(el =>
+//   {
+//   const liEl = document.createElement('li');
+//   const spanEl = document.createElement('span');
+//   spanEl.textContent = el.text
+//   liEl.appendChild(spanEl)
+
+//   const btnEl = document.createElement('button')
+//   btnEl.type = 'button'
+//   btnEl.setAttribute('data-id', el.id)
+//   btnEl.classList.add('delete')
+//   btnEl.textContent = 'Видалити'
+//   liEl.appendChild(btnEl)
+
+//     return liEl
+//   })
+
+// listEl.innerHTML = ''
+// listEl.append(...markup)
+  
+  
+  //варіант 2
+  
+   const markup = items.map((item) => {
+      return `
+      <li>
+      <span class="text${item.done ? ' done' : ''}">${item.text}</span>
+      <div>
+        <button type="button" data-id="${
+          item.id
+        }" class="delete">Видалити</button>
+      </div>
+      </li>
+    `;
+    })
+    .join('');
+
+  listEl.innerHTML = markup;  
+}
+
+
+
+function onBtnDeleteClick(event) {
+  
+  if (event.target.nodeName !== 'BUTTON') {
+  return
+  }
+
+  const todosId = Number(event.target.dataset.id)
+  
+  items = items.filter(el => el.id !== todosId)
+  updateList()
+
+}
