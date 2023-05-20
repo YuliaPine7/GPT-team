@@ -5,9 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blend Tasks GPT-team</title>
+
+    <!-- styles 6-7 module -->
+    <link rel="stylesheet" href="./lesson-4/styles.css" />
   </head>
   <body>
     <h1>Blend Tasks GPT-team</h1>
+
+    <h2>Модуль 6 - 7 - DOM</h2>
+    <!-- ЗАДАЧА 1 -->
+    <section>
+      <button type="button" class="modal-open js-modal-open">
+        Відкрити модалку
+      </button>
+      <div class="backdrop js-backdrop">
+        <div class="modal">
+          <button type="button" class="close-btn js-modal-close">X</button>
+
+          <form class="login-form js-modal__form">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="enter your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="enter your email" />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="enter your password"
+              />
+            </label>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗАДАЧА 2 -->
+    <!-- todos -->
+    <section>
+      <div class="container">
+        <h2>TODO List</h2>
+        <form class="todos-form js-todos__form">
+          <input
+            class="todos-input"
+            type="text"
+            placeholder="Додати завдання"
+            name="user-todos"
+          />
+          <button type="submit">Додати</button>
+        </form>
+        <ul>
+          <!-- сюди будуть додаватися елементи списку -->
+        </ul>
+      </div>
+    </section>
     <!-- lesson-1 -->
     <script src="./lesoon-1/module-1/tasks.js" type="module"></script>
 
@@ -18,5 +74,8 @@
     <!-- lesson-3 -->
     <script src="./lesson-3/module-4/module-4.js" type="module"></script>
     <script src="./lesson-3/module-5/module-5.js" type="module"></script>
+
+    <!-- lesson-4 -->
+    <script src="./lesson-4/js/module-6-7.js" type="module"></script>
   </body>
 </html>
